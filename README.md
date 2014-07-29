@@ -1,0 +1,2 @@
+client-plugin-skeleton.ts
+=========================
