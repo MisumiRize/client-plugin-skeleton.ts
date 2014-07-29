@@ -1,0 +1,26 @@
+{
+  "name": "client-plugin-skeleton.ts",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MisumiRize/client-plugin-skeleton.ts.git"
+  },
+  "author": "Rize MISUMI",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MisumiRize/client-plugin-skeleton.ts/issues"
+  },
+  "homepage": "https://github.com/MisumiRize/client-plugin-skeleton.ts",
+  "devDependencies": {
+    "browserify": "^5.9.1",
+    "gulp": "^3.8.6",
+    "gulp-mocha": "^0.5.2",
+    "gulp-tsc": "^0.9.2",
+    "q": "^1.0.1",
+    "tsd": "^0.5.7"
+  }
+}
