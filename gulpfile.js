@@ -1,8 +1,10 @@
+"use strict";
+
 var gulp = require("gulp"),
     tsc = require("gulp-tsc"),
     mocha = require("gulp-mocha"),
     Q = require("q"),
-    browserify = require("browserify")
+    browserify = require("browserify"),
     source = require("vinyl-source-stream");
 
 gulp.task("compile", function() {
