@@ -1,8 +1,7 @@
 "use strict";
 
 var gulp = require("gulp"),
-    tsc = require("gulp-tsc"),
-    mocha = require("gulp-mocha"),
+    $ = require("gulp-load-plugins")(),
     Q = require("q"),
     browserify = require("browserify"),
     source = require("vinyl-source-stream");
@@ -10,7 +9,7 @@ var gulp = require("gulp"),
 gulp.task("compile", function() {
     var defer = Q.defer();
     gulp.src("./test/{,**/}*.ts")
-        .pipe(tsc())
+        .pipe($.tsc())
         .pipe(gulp.dest("./.tmp/"))
         .on("end", function() {
             defer.resolve();
@@ -27,5 +26,5 @@ gulp.task("build", ["compile"], function() {
 
 gulp.task("test", ["build"], function() {
     return gulp.src("./.tmp/test/{,**/}*.js")
-        .pipe(mocha());
+        .pipe($.mocha());
 });
