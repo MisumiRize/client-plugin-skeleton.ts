@@ -22,7 +22,6 @@
     "gulp-load-plugins": "^0.5.3",
     "gulp-mocha": "^0.5.2",
     "gulp-tsc": "^0.9.2",
-    "q": "^1.0.1",
     "tsd": "^0.5.7",
     "vinyl-source-stream": "^0.1.1"
   }

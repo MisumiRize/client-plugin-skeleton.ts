@@ -2,19 +2,21 @@
 
 var gulp = require("gulp"),
     $ = require("gulp-load-plugins")(),
-    Q = require("q"),
+    tsd = require("tsd"),
     browserify = require("browserify"),
     source = require("vinyl-source-stream");
 
+gulp.task("definition", function() {
+    var api = new tsd.API(new tsd.Context());
+    return api.readConfig().then(function() {
+        api.reinstall(tsd.Options.fromJSON({ saveToConfig: true }));
+    });
+});
+
 gulp.task("compile", function() {
-    var defer = Q.defer();
-    gulp.src("./test/{,**/}*.ts")
+    return gulp.src("./test/{,**/}*.ts")
         .pipe($.tsc())
-        .pipe(gulp.dest("./.tmp/"))
-        .on("end", function() {
-            defer.resolve();
-        });
-    return defer.promise;
+        .pipe(gulp.dest("./.tmp/"));
 });
 
 gulp.task("build", ["compile"], function() {
